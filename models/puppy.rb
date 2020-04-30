@@ -3,11 +3,10 @@
 class Puppy 
   attr_accessor :name, :breed, :age 
   
-  def initialize(name, breed, age)
-    @name = name
-    @breed = breed 
-    @age = age 
-  end 
-  
+  def initialize(params)
+   params.each{|k,v| self.send("#{k}=",v)}
+end
+
+
   
 end 
